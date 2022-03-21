@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter un article</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tique"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="produitReact" (ngSubmit)="save()">
+    <!-- <ion-item>
+      <ion-label>Id du produit:</ion-label>
+      <ion-input placeholder="ID" type="text" ></ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label>lien de l'image du produit:</ion-label>
+      <ion-input formControlName ="lien" placeholder="lien de l'image du produit" type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nom du produit:</ion-label>
+      <ion-input placeholder="Nom du produit" type="text" formControlName ="nom" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>prix du produit:</ion-label>
+      <ion-input placeholder="prix du produit" type="text" formControlName ="prix" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>taille:</ion-label>
+      <ion-input placeholder="taille" type="text" formControlName ="taille"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>Statut: </ion-label>
+      <ion-input placeholder="statut" type="text" formControlName ="statut"></ion-input>
+    </ion-item> -->
+
+
+    <ion-item>
+      <ion-label >Couleur:</ion-label>
+      <ion-input  formControlName ="couleur" placeholder="couleur" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label >Catégorie</ion-label>
+      <ion-select interface="popover" formControlName ="Categorie">
+        <ion-select-option value="nes">Homme</ion-select-option>
+        <ion-select-option value="n64">Femme</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <br>
+    <ion-button type="submit" color="red" onclick="save()" >Enregistrer</ion-button>
+
+
+  </form>
+
+</ion-content>

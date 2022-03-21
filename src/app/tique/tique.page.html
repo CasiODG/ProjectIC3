@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Les Produits</ion-title>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-label>Nombre d'articles :  {{Liste.length}} </ion-label>
+
+    <br>
+    <ion-item button  [routerLink]="['/produit-detail',a.id]" *ngFor="let a of Liste">
+
+      <ion-avatar>
+        <ion-img [src]="a.lien"></ion-img>
+      </ion-avatar>
+       <ion-label>{{a.nom}} <br>
+        Prix : {{a.prix}} $</ion-label>
+       <!-- <ion-button color="light" [routerLink]="['/produit-detail',a.id] "> Details </ion-button> -->
+
+       <p *ngIf="a?.prix >10">
+        SOLDE
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-button color="light" [routerLink]="['/add'] "> Add </ion-button>
+  </ion-content>
+

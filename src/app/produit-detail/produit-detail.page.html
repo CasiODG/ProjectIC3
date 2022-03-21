@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>information {{Produit?.nom}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tique"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button defaultHref="produit-add" (click)="remove()">Supprimer</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="class1">
+  <ion-img src={{Produit?.lien}}></ion-img>
+  <div>
+  <h1> {{Produit?.nom}}
+  </h1>
+
+  <p>
+      prix : {{Produit?.prix}} $
+  </p>
+  <p>
+      taille : {{Produit?.taille}}
+  </p>
+  <p>
+
+  </p>
+  <p>
+    couleur: {{Produit?.information.couleur}}
+    <!-- <p>
+
+    Status : {{Produit?.information.statut}}
+    </p> -->
+    <p>
+      Categorie :{{Produit?.information.categorie}}
+    </p>
+
+
+    <p *ngIf="Produit?.prix >10">
+      SOLDE
+    </p>
+
+
+<!--
+   <p *ngIf="Produit? && Produit?.prix && Produit?.prix >50 ">
+      {{ Produit?.nom}} is SOLDE
+  </p>
+  <p *ngIf="livre && livre.prix && livre.prix <50 ">
+      {{ livre.titre}} is NOT SOLDE
+   </p> -->
+
+  <p></p>
+
+</div>
+
+</ion-content>
